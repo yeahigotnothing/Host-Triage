@@ -1,3 +1,9 @@
+# Check if the script is running as an administrator
+if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+    Write-Host "This script needs to be run as an administrator. Please re-run with administrative privileges." -ForegroundColor Red
+    exit
+}
+
 # Get the current user's desktop path
 $desktopPath = [Environment]::GetFolderPath("Desktop")
 
