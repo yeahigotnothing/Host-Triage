@@ -4,14 +4,6 @@ $desktopPath = [Environment]::GetFolderPath("Desktop")
 # Define the Host_Triage folder path
 $triageFolderPath = Join-Path -Path $desktopPath -ChildPath "Host_Triage"
 
-# Check if the Host_Triage folder exists, if not, create it
-if (-not (Test-Path $triageFolderPath)) {
-    New-Item -Path $triageFolderPath -ItemType Directory
-    Write-Host "Created Host_Triage folder on the desktop."
-} else {
-    Write-Host "Host_Triage folder already exists on the desktop."
-}
-
 # Define the Tools folder path within Host_Triage
 $toolsFolderPath = Join-Path -Path $triageFolderPath -ChildPath "Tools"
 
