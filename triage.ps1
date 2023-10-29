@@ -46,7 +46,7 @@ $imagePath = $e01Files[0].FullName
 # Get all currently used drive letters
 $usedDriveLetters = Get-Volume | Where-Object { $_.DriveType -eq 'Fixed' } | ForEach-Object { $_.DriveLetter }
 
-# Find the next available drive letter, starting from C
+# Find the next available drive letter, starting from D
 $alphabet = 68..90 # ASCII values for D-Z
 $mountPoint = $null
 foreach ($ascii in $alphabet) {
